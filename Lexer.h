@@ -1,3 +1,6 @@
+#ifndef LEXER_H
+#define LEXER_H
+
 #include <string>
 #include <vector>
 #include <iostream>
@@ -21,3 +24,5 @@ public:
   TokenKind Lex();
   
 };
+
+#endif

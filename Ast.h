@@ -1,4 +1,5 @@
-
+#ifndef AST_H
+#define AST_H
 
 class AST{
 };
@@ -66,3 +67,4 @@ public:
 class DesignFileAST:public ElementsArrayAST<DesignUnitAST>{
 };
 
+#endif

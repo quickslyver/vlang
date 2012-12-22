@@ -1,3 +1,7 @@
+#ifndef TOKEN_KIND_H
+#define TOKEN_KIND_H
+
+
 enum TokenKind{
   tok_invalid,
   tok_eof,
@@ -272,3 +276,5 @@ static const char* toString(enum TokenKind tok){
   }
   return "<unknown>";
 }
+
+#endif

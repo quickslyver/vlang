@@ -12,16 +12,18 @@ ContextClauseAST* Parser::ParseContextClause(){
  *   end [ package ] [ package_simple_name ] ;
  */
 PackageDeclarationAST* Parser::ParsePackageDeclarationAST(){
-  eatToken(tok_package);
+  eatToken(tok_kw_package);
   eatToken(tok_identifier);
-  eatToken(tok_is);
-  eatToken(tok_end);
-  if(curTok==package)
-    eatToken(tok_package);
+  std::string PackageName="";
+  eatToken(tok_kw_is);
+  PackageDeclarativePartAST* pkgDeclPart=0;//ParsePackageDeclarativePartAST();
+  eatToken(tok_kw_end);
+  if(curTok==tok_kw_package)
+	eatToken(tok_kw_package);
   if(curTok==tok_identifier);
     eatToken(tok_identifier);
   eatToken(tok_semicolon);
-  return new PackageDeclarationAST("",Parse);
+  return new PackageDeclarationAST(PackageName,pkgDeclPart);
 }
 
 /* primary_unit ::=
